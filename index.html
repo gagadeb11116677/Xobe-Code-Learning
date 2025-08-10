@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Xobe Code Learning – Full Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="dark-mode">
+    <!-- NAVBAR -->
+    <nav class="navbar glassmorphism">
+        <div class="logo">Xobe Code Learning</div>
+        <div class="nav-links">
+            <a class="nav-link" onclick="showSection('home')">Beranda</a>
+            <a class="nav-link" onclick="showSection('courses')">Kursus</a>
+            <a class="nav-link" onclick="showSection('playground')">Playground</a>
+            <div class="theme-toggle glassmorphism" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <h1>Selamat Datang di Xobe Code Learning</h1>
+            <p>Platform pembelajaran coding interaktif untuk HTML, CSS, dan JavaScript</p>
+            <button class="btn-primary" onclick="showSection('courses')">Mulai Belajar</button>
+            <div style="margin-top:3rem;font-size:4rem;animation:float 3s ease-in-out infinite">💻✨🚀</div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses" class="section">
+        <h1 style="text-align:center;margin-bottom:2rem">Pilih Kursus</h1>
+        <div class="courses-grid">
+            <div class="course-card glassmorphism">
+                <div class="course-icon">📄</div>
+                <h2>HTML</h2>
+                <p>Struktur konten web</p>
+                <div class="topics-list">
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-basics')">1. HTML Dasar</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-headings')">2. Headings & Paragraf</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-links')">3. Link & Anchor</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-images')">4. Gambar & Figure</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-lists')">5. List (ul/ol/dl)</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-tables')">6. Tabel</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-forms')">7. Form & Input</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-media')">8. Audio & Video</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-semantic')">9. Semantic Tags</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('html-accessibility')">10. Aksesibilitas</div>
+                </div>
+            </div>
+
+            <div class="course-card glassmorphism">
+                <div class="course-icon">🎨</div>
+                <h2>CSS</h2>
+                <p>Styling & Layout</p>
+                <div class="topics-list">
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-basics')">1. CSS Dasar</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-selectors')">2. Selector Lanjut</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-boxmodel')">3. Box Model</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-flexbox')">4. Flexbox</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-grid')">5. CSS Grid</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-position')">6. Position & Z-index</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-animations')">7. Animasi & Transisi</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-transform')">8. Transform 2D/3D</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-responsive')">9. Responsive Design</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('css-variables')">10. CSS Variables</div>
+                </div>
+            </div>
+
+            <div class="course-card glassmorphism">
+                <div class="course-icon">⚡</div>
+                <h2>JavaScript</h2>
+                <p>Interaktif & Logic</p>
+                <div class="topics-list">
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-basics')">1. Sintaks Dasar</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-datatypes')">2. Tipe Data</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-functions')">3. Function & Arrow</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-dom')">4. DOM Manipulation</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-events')">5. Event Handling</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-array')">6. Array Methods</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-object')">7. Object & JSON</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-async')">8. Async/Await</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-fetch')">9. Fetch API</div>
+                    <div class="topic-item glassmorphism" onclick="showLearning('js-storage')">10. Local Storage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNING -->
+    <section id="learning" class="section">
+        <button class="back-btn glassmorphism" onclick="showSection('courses')">← Kembali</button>
+        <div class="learning-content">
+            <h1 id="learning-title">Judul Materi</h1>
+            <div id="learning-content"></div>
+            <pre id="code-example" class="code-example glassmorphism"></pre>
+            <button class="btn-primary" onclick="loadToPlayground()">Jalankan Contoh</button>
+        </div>
+    </section>
+
+    <!-- PLAYGROUND -->
+    <section id="playground" class="section">
+        <h1 style="text-align:center;margin-bottom:1rem">Code Playground</h1>
+        <div class="playground-container">
+            <div class="editor-section">
+                <div class="editor-tabs">
+                    <div class="tab glassmorphism active" onclick="switchTab('html')">HTML</div>
+                    <div class="tab glassmorphism" onclick="switchTab('css')">CSS</div>
+                    <div class="tab glassmorphism" onclick="switchTab('js')">JS</div>
+                </div>
+                <textarea id="html-editor" class="editor glassmorphism" placeholder="Ketik HTML di sini..."></textarea>
+                <textarea id="css-editor" class="editor glassmorphism" style="display:none" placeholder="Ketik CSS di sini..."></textarea>
+                <textarea id="js-editor" class="editor glassmorphism" style="display:none" placeholder="Ketik JavaScript di sini..."></textarea>
+            </div>
+            <div class="output-section">
+                <div class="output-header glassmorphism">
+                    <span>Output</span>
+                    <div>
+                        <button class="run-btn" onclick="runCode()">Run</button>
+                        <button class="reset-btn" onclick="resetCode()">Reset</button>
+                    </div>
+                </div>
+                <iframe id="output-frame" class="output-iframe glassmorphism"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
