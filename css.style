@@ -1,0 +1,290 @@
+/* === ROOT & THEME === */
+:root{
+    --primary-blue:#00d4ff;
+    --primary-purple:#8b5cf6;
+    --bg-dark:#0a0a0a;
+    --bg-light:#ffffff;
+    --text-dark:#ffffff;
+    --text-light:#1a1a1a;
+    --glass-dark:rgba(255,255,255,.1);
+    --glass-light:rgba(0,0,0,.1);
+    --border-dark:rgba(255,255,255,.2);
+    --border-light:rgba(0,0,0,.1);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Poppins',sans-serif;
+    transition:all .3s ease;
+    overflow-x:hidden;
+}
+body.light-mode{
+    background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+    color:var(--text-light);
+}
+body.dark-mode{
+    background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%);
+    color:var(--text-dark);
+}
+.glassmorphism{
+    background:var(--glass-dark);
+    backdrop-filter:blur(10px);
+    border:1px solid var(--border-dark);
+    border-radius:15px;
+    transition:all .3s ease;
+}
+body.light-mode .glassmorphism{
+    background:var(--glass-light);
+    border:1px solid var(--border-light);
+}
+
+/* === NAVBAR === */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 2rem;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    background:linear-gradient(45deg,var(--primary-blue),var(--primary-purple));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.nav-links{
+    display:flex;
+    gap:2rem;
+    align-items:center;
+}
+.nav-link{
+    cursor:pointer;
+    padding:.5rem 1rem;
+    border-radius:25px;
+    transition:all .3s ease;
+    text-decoration:none;
+    color:inherit;
+}
+.nav-link:hover{
+    background:rgba(0,212,255,.2);
+    transform:translateY(-2px);
+}
+.theme-toggle{
+    cursor:pointer;
+    padding:.5rem;
+    border-radius:50%;
+    transition:all .3s ease;
+}
+.theme-toggle:hover{
+    transform:rotate(180deg);
+}
+
+/* === SECTION === */
+.section{
+    min-height:100vh;
+    padding:6rem 2rem 2rem;
+    display:none;
+    animation:fadeIn .5s ease;
+}
+.section.active{
+    display:block;
+}
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* === HOME === */
+.hero{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto;
+}
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:1rem;
+    background:linear-gradient(45deg,var(--primary-blue),var(--primary-purple));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:2rem;
+    opacity:.8;
+}
+.btn-primary{
+    background:linear-gradient(45deg,var(--primary-blue),var(--primary-purple));
+    color:#fff;
+    border:none;
+    padding:1rem 2rem;
+    border-radius:30px;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:all .3s ease;
+    box-shadow:0 4px 15px rgba(0,212,255,.4);
+}
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(0,212,255,.6);
+}
+
+/* === COURSES === */
+.courses-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:2rem;
+    max-width:1200px;
+    margin:0 auto;
+}
+.course-card{
+    padding:2rem;
+    text-align:center;
+    transition:all .3s ease;
+}
+.course-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,212,255,.3);
+}
+.course-icon{
+    font-size:3rem;
+    margin-bottom:1rem;
+}
+.topics-list{
+    margin-top:2rem;
+}
+.topic-item{
+    padding:1rem;
+    margin:.5rem 0;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+.topic-item:hover{
+    background:rgba(0,212,255,.1);
+    transform:translateX(5px);
+}
+
+/* === LEARNING === */
+.learning-content{
+    max-width:1000px;
+    margin:0 auto;
+}
+.code-example{
+    padding:1.5rem;
+    margin:1rem 0;
+    font-family:'Courier New',monospace;
+    overflow-x:auto;
+    white-space:pre-wrap;
+}
+.back-btn{
+    position:absolute;
+    top:6rem;
+    left:2rem;
+    padding:.5rem 1rem;
+    border-radius:20px;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+.back-btn:hover{
+    background:rgba(0,212,255,.2);
+}
+
+/* === PLAYGROUND === */
+.playground-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+    max-width:1400px;
+    margin:0 auto;
+    height:80vh;
+}
+.editor-section{
+    display:flex;
+    flex-direction:column;
+    gap:.5rem;
+}
+.editor-tabs{
+    display:flex;
+    gap:.5rem;
+}
+.tab{
+    padding:.5rem 1rem;
+    cursor:pointer;
+    border-radius:10px 10px 0 0;
+    transition:all .3s ease;
+}
+.tab.active{
+    background:rgba(0,212,255,.2);
+}
+.editor{
+    flex:1;
+    padding:1rem;
+    font-family:'Courier New',monospace;
+    font-size:14px;
+    resize:none;
+    outline:none;
+    transition:all .3s ease;
+}
+body.light-mode .editor{
+    background:rgba(255,255,255,.9);
+    color:#333;
+}
+body.dark-mode .editor{
+    background:rgba(0,0,0,.9);
+    color:#fff;
+}
+.output-section{
+    display:flex;
+    flex-direction:column;
+}
+.output-header{
+    padding:.5rem 1rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.output-iframe{
+    flex:1;
+    border:none;
+    border-radius:10px;
+    background:#fff;
+}
+.run-btn{
+    background:linear-gradient(45deg,var(--primary-blue),var(--primary-purple));
+    color:#fff;
+    border:none;
+    padding:.5rem 1.5rem;
+    border-radius:20px;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+.run-btn:hover{
+    transform:scale(1.05);
+}
+.reset-btn{
+    background:rgba(255,59,48,.8);
+    color:#fff;
+    border:none;
+    padding:.5rem 1.5rem;
+    border-radius:20px;
+    cursor:pointer;
+    margin-left:.5rem;
+    transition:all .3s ease;
+}
+.reset-btn:hover{
+    background:rgba(255,59,48,1);
+}
+
+/* === RESPONSIVE === */
+@media (max-width:768px){
+    .hero h1{font-size:2.5rem}
+    .playground-container{grid-template-columns:1fr;height:auto}
+    .nav-links{gap:1rem}
+    .nav-link{padding:.3rem .7rem;font-size:.9rem}
+}
